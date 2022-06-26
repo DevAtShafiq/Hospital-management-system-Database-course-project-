@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Hospital  Management System</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+	<style>
+	html, body, div, span, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	abbr, address, cite, code,
+	del, dfn, em, img, ins, kbd, q, samp,
+	small, strong, sub, sup, var,
+	b, i,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, figcaption, figure,
+	footer, header, hgroup, menu, nav, section, summary,
+	time, mark, audio, video {
+		margin:0;
+		padding:0;
+		border:0;
+		outline:0;
+		font-size:100%;
+		vertical-align:baseline;
+		background:transparent;
+	}
+
+
+	header{
+		background-color: black;
+		padding: 2rem;
+	}
+	header .topLink{
+
+		display: flex;
+		flex-direction: row;
+		text-align: right;
+		align-items: center;
+		gap: 1rem;
+
+		color: white;
+	}
+	header .topLink li{
+	list-style: none;
+
+	}
+	header .topLink li a{
+		font-size: 20px;
+		color: white;
+		text-decoration: none;
+	}
+
+
+
+	</style>
+</head>
+
+<body>
+
+
+
+	<header>
+		<div class="topLink container ">
+			<li><a th:href="@{/doctor/home}">Home</a></li>
+			<li><a th:href="@{/doctor/about}">About</a></li>
+			<li><a th:href="@{/doctor/list}">Doctors</a></li>
+			<li><a th:href="@{/nurse/list}">Nurses</a></li>
+			<li><a href="">Life Support</a></li>
+			<li><a href="">24/7 call center</a></li>
+			<li><a th:href="@{/doctor/reservation/list}">Reservation</a></li>
+			<li><a href="">Login</a></li>
+		</div>
+	</header>
+<br>
+	<div class="container">
+
+		<a  class="btn btn-primary mb-2 ml-3" th:href="@{/nurse/new}">Add New Nurse</a>
+
+		<a  class="btn btn-success mb-2 ms-3" th:href="@{/nurse/list}" >All Nurses</a>
+		<a  class="btn btn-primary mb-2 ms-3" th:href="@{/nurse/byHighestSalary}" >Find by Highest Salary</a>
+		<a  class="btn btn-primary mb-2 ms-3" th:href="@{/nurse/byLowestSalary}" >Find by Lowest Salary</a>
+
+		<form action="/nurse/findByName">
+			<input type="text" placeholder="enter name" class="form-control">
+			<button type="submit" class="btn btn-primary mt-2 mb-2">Find by name</button>
+		</form>
+
+
+
+
+		<table class="table table-striped table-bordered text-center">
+			<thead class="table-dark">
+				<tr>
+
+					<th>Name
+					</th>
+					<th>Designation
+					</th>
+					<th>Salary
+					</th>
+					<th>Date of Birth
+					</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+
+					<td th:text="${nurseByName.name}"></td>
+					<td th:text="${nurseByName.position}"></td>
+					<td th:text="${nurseByName.salary}"></td>
+					<td th:text="${nurseByName.dateOfBirth}"></td>
+					<td>
+
+
+
+					</td>
+
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+
+</html>

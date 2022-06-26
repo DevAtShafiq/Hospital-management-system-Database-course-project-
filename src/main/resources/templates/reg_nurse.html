@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Hospital  Management System</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+    <style>/* html reset code  */
+    html, body, div, span, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    abbr, address, cite, code,
+    del, dfn, em, img, ins, kbd, q, samp,
+    small, strong, sub, sup, var,
+    b, i,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section, summary,
+    time, mark, audio, video {
+        margin:0;
+        padding:0;
+        border:0;
+        outline:0;
+        font-size:100%;
+        vertical-align:baseline;
+        background:transparent;
+    }
+
+    .total{
+        margin: 2rem;
+    }
+    header{
+        background-color: black;
+        padding: 2rem;
+    }
+    header .topLink{
+
+        display: flex;
+        flex-direction: row;
+        text-align: right;
+        align-items: center;
+        gap: 1rem;
+
+        color: white;
+    }
+    header .topLink li{
+
+        font-size: 20px;
+    }
+
+
+    @media (max-width: 768px) {
+
+
+        header{
+
+            background-color: rgb(244, 147, 0);
+        }
+        header .topLink{
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            color: white;
+        }
+        header .topLink li{
+
+            font-size: 25px;
+        }
+        header .topLink li a:hover{
+
+            color: #4b0202;
+        }
+
+
+        .imgcontainer img{
+            margin-left: -120px;
+
+            width: 740px;
+            height: 380px;
+
+        }
+
+        .container .boxes{
+            margin-top: .1rem;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+        }
+        .container .boxes img{
+
+            width: 540px;
+            height: 380px;
+
+        }
+
+        .boxes_two {
+
+            margin-left: -50px;
+
+            flex-direction: column;
+
+        }
+
+
+
+
+    }
+    /* media query end */
+
+
+
+    header li{
+
+        list-style: none;
+        font-size: 30px;
+    }
+    header li a{
+        text-decoration: none;
+        color: white;
+
+    }
+    header li a:hover{
+        color:bisque;
+    }
+    .mainBody .container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+
+    }
+    .total{
+        width: 1000px;
+    }
+    .total .mainBody .container .logo_header img{
+        width: 6rem;
+        height: 9rem;
+    }
+
+    .total .mainBody .container  h1{
+        font-family: Arial, Helvetica, sans-serif;
+
+        font-size: 40pt;
+
+    }
+    .total .mainBody .container .logo_header{
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    .total .mainBody .container .logo_header img{
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .total .mainBody .container .search{
+        margin-left: 32rem;
+    }
+
+    .total .mainBody .container .search input{
+        padding: .4rem;
+        border-radius: 5px;
+    }
+
+
+
+    .boxes{
+        width: 1200px;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+
+    .boxes img{
+        width: 600px;
+        height: 20rem;
+    }
+    .boxes_two{
+        margin-top: 1.2px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .boxes_two .box  {
+        margin: 1px;
+        width: 18.6rem;
+        height: 12rem;
+
+
+    }
+
+
+    .boxes_two .box img{
+        width: 18.8rem;
+        height: 12rem;
+
+    }
+    .ro{
+        display: flex;
+        flex-direction: row;
+
+        width: 1200px;
+    }
+
+
+    .socialMedia .col_eight {
+
+        /* border: 1px solid #b6d34b; */
+        /* background-color: black; */
+        width: 700px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2rem;
+
+    }
+    .ro  .col_four{
+        margin-left: 1rem;
+        width: 500px;
+        /* background-color: black; */
+    }
+    .socialMedia .col_eight .box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 1rem;
+        width: 400px;
+        height: 400px;
+        background-color: #ffffff;
+        /* border: 1px solid #1f1f1f; */
+
+
+    }
+    .socialMedia .col_eight .box p{
+        text-align: justify;
+    }
+
+    .socialMedia .col_eight .box img{
+        width: 200px;
+        height: 200px;
+    }
+    .socialMedia .col_eight .box  a{
+        text-decoration: none;
+    }
+
+    form{
+        margin-left: 2rem;
+
+
+        padding: 1rem;
+        /* border: 10px solid salmon; */
+
+        border-radius: 10px;
+        /* border: 4px solid #9bb796bc; */
+        margin-bottom: 2rem;
+    }
+    form input[type=text],textarea,input[type=email]{
+
+        padding-top:.5rem;
+    }
+    form input[type=text]:hover,input[type=email]:hover{
+
+        border: 2px solid;
+
+    }
+    .btn a{
+        color: white;
+        text-decoration: none;
+    }
+    footer{
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        margin-bottom: .6rem;
+        text-align: center;
+        align-items: center;
+        background-color: black;
+        color: white;
+        margin-top:31rem;
+    }
+
+    form textarea{
+        resize: none;
+    }</style>
+</head>
+<body>
+
+<header>
+    <div class="topLink container ">
+        <li><a th:href="@{/doctor/home}">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a th:href="@{/doctor/list}">Doctors</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Life Support</a></li>
+        <li><a href="">24/7 call center</a></li>
+        <li><a href="">Reservation</a></li>
+        <li><a href="">Login</a></li>
+    </div>
+</header>
+<div class="total container">
+    <div class="header">
+        <div class="logo"></div>
+        <div class="logoTitle"></div>
+        <div class="links"></div>
+    </div>
+
+
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center mt-2">Register new Nurse </h1>
+            <div class="card-body">
+                <form th:action="@{/nurse/register}" th:object="${nurse}" method="post">
+
+                    <div class="form-group py-1">
+                        <label class="mb-1">Name </label>
+                        <input type="text" name="name" th:field="${nurse.name}"
+                               placeholder="Enter doctor  name" class="form-control">
+                    </div>
+
+
+                    <div class="form-group py-1">
+                        <label class="mb-1"> Position </label>
+                        <input type="text" name="position" th:field="${nurse.position}" placeholder="Enter designation"
+                               class="form-control">
+                    </div>
+                    <div class="form-group py-1">
+                        <label class="mb-1"> Salary </label>
+                        <input type="text" name="salary" th:field="${nurse.salary}" placeholder="Enter salary"
+                               class="form-control">
+                    </div>
+<!--                    <div class="form-group py-1">-->
+<!--                        <label class="mb-1">Unit Id </label>-->
+<!--                        <input type="text" name="unitName" th:field="${nurse.unitId}" placeholder="Enter unit name"-->
+<!--                               class="form-control">-->
+<!--                    </div>-->
+
+                    <div class="form-group py-1">
+                        <label class="mb-1">Date of birth </label>
+                        <input type="text"  name="dateOfBirth" th:field="${nurse.dateOfBirth}" class="form-control">
+                    </div>
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>All copy &copy; rights reserved at https://github.com/DevAtShafiq</footer>
+</body>
+
+</html>

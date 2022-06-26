@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/homepage.css}">
+
+</head>
+<body>
+
+<header>
+    <div class="topLink container ">
+        <li><a th:href="@{/doctor/home}">Home</a></li>
+        <li><a th:href="@{/doctor/about}">About</a></li>
+        <li><a th:href="@{/doctor/list}">Doctors</a></li>
+        <li><a th:href="@{/nurse/list}">Nurses</a></li>
+        <li><a href="">Life Support</a></li>
+        <li><a href="">24/7 call center</a></li>
+        <li><a th:href="@{/doctor/reservation/list}">Reservation</a></li>
+        <li><a href="">Login</a></li>
+    </div>
+</header>
+
+        <div class="mainBody ">
+             <div class="container ">
+                <div class="logo_header ">
+                    <a href="homepage.html"><img th:src="@{https://i.pinimg.com/564x/30/7e/69/307e6906c251d91bb6202b3dd4736d7a.jpg}" alt=""></a>
+                      <h1 class ="text-warning">United Hospital</h1>
+
+                </div>
+
+                    <div class="search">
+                        <input type="text" placeholder="search here">
+                        <button class="btn btn-primary">Search</button>
+                    </div>
+             </div>
+        </div>
+
+            <div class="imgContainer container">
+                 <img th:src="@{https://mcdn.wallpapersafari.com/medium/71/35/Fbyh8B.jpg}" alt="">
+            </div>
+
+
+
+
+        <div class=" container boxes">
+            <div class="box">
+                <img th:src="@{https://www.paho.org/sites/default/files/styles/max_1500x1500/public/banner-covid-19-1280x549.jpg}" alt="">
+            </div>
+            <div class="box">
+                <img th:src="@{https://surrycountyva.gov/ImageRepository/Document?documentId=773}" alt="">
+            </div>
+
+        </div>
+
+        <div class="container boxes_two ">
+            <div class="box">
+                <img src="https://yumc.ac.kr:8443/images/yumc/12_english/appliances_img01.jpg" alt="">
+                <p class="text-primary">Advanced Dual 192 channel SOMATOM</p>
+            </div>
+            <div class="box">
+                <img src="https://yumc.ac.kr:8443/images/yumc/12_english/appliances_img02.jpg" alt="">
+                <p class="text-primary">Advanced Dual 192 channel SOMATOM </p>
+            </div>
+            <div class="box">
+                <img src="https://yumc.ac.kr:8443/images/yumc/12_english/appliances_img21.jpg" alt="">
+                <p class="text-primary">Advanced Dual 192 channel SOMATOM </p>
+            </div>
+            <div class="box">
+                <img src="https://yumc.ac.kr:8443/images/yumc/12_english/appliances_img08.jpg" alt="">
+                <p class="text-primary">Advanced Dual 192 channel  </p>
+            </div>
+        </div>
+
+
+<div class="socialMedia container mt-4">
+    <div class="ro ">
+        <div class="col_eight">
+            <div class="box">
+                <img src="https://cdn3.iconfinder.com/data/icons/picons-social/57/46-facebook-1024.png" alt="">
+                <a href="http://www.facebook.com"> <p>www.facebook.com</p></a>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas ut voluptas sequi in impedit, fuga aut.</p>
+            </div>
+
+            <div class="box">
+                <img src="https://icon-library.com/images/instagram-icon-download/instagram-icon-download-7.jpg" alt="">
+                <a href="http://www.instagram.com">     <p>http:instagram.com</p></a>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas ut voluptas sequi in impedit, fuga aut.</p>
+            </div>
+
+            <div class="box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/YouTube_social_white_square_%282017%29.svg/640px-YouTube_social_white_square_%282017%29.svg.png">
+                <a href="http://www.youtube.com">   <p>www.youtube.com</p></a>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas ut voluptas sequi in impedit, fuga aut.</p>
+            </div>
+        </div>
+
+        <div class="col_four">
+            <form th:action="@{/doctor/saveContact}"  th:object="${contact}" method="post">
+                <h2 class="text-center">Contact</h2>
+                <div class="form-group">
+                    <div class="name:">
+                        <label for="name">Name:</label>
+                        <input class="form-control" type="text" name="name" th:field="${contact.name}" id="name">
+                    </div>
+                    <div class="Email:">
+                        <label for="email">Email:</label>
+                        <input class="form-control"type="text" th:field="${contact.email}" name="email"  id="email">
+                    </div>
+                    <div class="Message">
+                        <label for="message">Message:</label>
+                        <textarea name="textarea"  class="form-control" id="message" th:field="${contact.message}" cols="20" rows="6"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-warning mt-2 d-block mx-auto text-light">Send Message</button>
+
+
+            </form>
+        </div>
+
+    </div>
+</div>
+<footer class="">All copy &copy; rights reserved at https://github.com/DevAtShafiq</footer>
+</body>
+</html>

@@ -1,0 +1,179 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.total{
+    margin: 2rem;
+}
+header{
+    background-color: black;
+    padding: 2rem;
+}
+header .topLink{
+
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+    align-items: center;
+    gap: 1rem;
+
+    color: white;
+}
+header li{
+
+    list-style: none;
+    font-size: 20px;
+}
+header li a{
+    text-decoration: none;
+    color: white;
+}
+header li a:hover{
+    color:bisque;
+}
+.mainBody .container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+}
+.total{
+    width: 1000px;
+}
+.total .mainBody .container img{
+    width: 7rem;
+    height: 8rem;
+}
+
+.total .mainBody .container  h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 50pt;
+    font-size: 40pt;
+
+}
+.total .mainBody .container .logo_header{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.total .mainBody .container .search{
+    margin-left: 32rem;
+}
+
+.total .mainBody .container .search input{
+    padding: .4rem;
+    border-radius: 5px;
+}
+
+.container .two p{
+    margin-top: 2rem;
+    text-align: justify;
+}
+
+.about .boxes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+}
+
+.about .boxes img{
+
+    width: 600px;
+    height: 520px;
+}
+.about .boxes p{
+    width: 600px;
+    height: 520px;
+    text-align: justify;
+
+}
+footer{
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    margin-top: 16rem;
+    margin-bottom: .6rem;
+    text-align: center;
+    align-items: center;
+    background-color: black;
+    color: white
+}
+
+@media (max-width: 768px) {
+
+
+    header{
+
+        background-color: rgb(244, 147, 0);
+    }
+    header .topLink{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        color: white;
+    }
+    header .topLink li{
+
+        font-size: 25px;
+    }
+    header .topLink li a:hover{
+
+        color: #4b0202;
+    }
+    .mainBody .container{
+        display: flex;
+        flex-direction: column;
+
+
+
+    }
+
+    .mainBody .container .search{
+        display: none;
+
+
+    }
+
+    .imgcontainer img{
+        margin-left: -120px;
+        visibility: none;
+        width: 740px;
+        height: 380px;
+
+    }
+
+    .container .boxes{
+        margin-top: .1rem;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+    .container .boxes img{
+
+        width: 540px;
+        height: 380px;
+
+    }
+
+    .boxes_two {
+
+        margin-left: -50px;
+
+        flex-direction: column;
+
+    }
+
+
+
+
+}
